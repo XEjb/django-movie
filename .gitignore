@@ -9,7 +9,7 @@ idea
 dist
 db.sqlite3
 
-env
+/env/*
 
 
 prod_settings.py
