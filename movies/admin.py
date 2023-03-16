@@ -99,7 +99,7 @@ class MovieAdmin(TranslationAdmin):
         self.message_user(request, f"{message_bit}")
 
     publish.short_description = "Опубликовать"
-    publish.allowed_permissions = ('change',)
+    publish.allowed_permissions = ('change', )
 
     unpublish.short_description = "Снять с публикации"
     unpublish.allowed_permissions = ('change',)
