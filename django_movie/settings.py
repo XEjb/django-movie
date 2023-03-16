@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'movies',
     'contact',
     'snowpenguin.django.recaptcha3',
+    'allauth',
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -76,17 +78,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_movie.wsgi.application'
 
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': str(os.path.join(BASE_DIR, "db.sqlite3"))
     }
 }
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -118,8 +120,6 @@ USE_I18N = True
 USE_L1ON = True
 
 USE_TZ = True
-
-
 
 gettext = lambda s: s
 LANGUAGES = (
@@ -212,7 +212,6 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
-
 
 RECAPTCHA_PUBLIC_KEY = '6Le43AIlAAAAAIMjlkA5M82JKzHU0cVjWDIuBYWf'
 RECAPTCHA_PRIVATE_KEY = '6Le43AIlAAAAAIHUogGVUMgHvm2XDNHbNWeiUN0p'
